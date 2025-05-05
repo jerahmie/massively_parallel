@@ -11,7 +11,6 @@ fn main() {
     cc::Build::new()
         .ccbin(false) 
         .cuda(true)
-        .flag("-cudart=shared")
         .flag("-gencode")
         .flag("arch=compute_61,code=sm_61")
         .flag("-allow-unsupported-compiler")
@@ -21,6 +20,7 @@ fn main() {
     /* Link CUDA Runtime (libcudart.so) */
     println!("cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu");
     println!("cargo:rustc-link-lib=cudart");
+    println!("cargo:rustc-link-lib=cuda");
 
 }
 

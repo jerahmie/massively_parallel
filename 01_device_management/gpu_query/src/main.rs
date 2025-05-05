@@ -3,6 +3,7 @@
 unsafe extern "C" {
     fn hello()->i32;
     fn hello_gpu();
+    fn query_gpu()->i32;
 }
 
 pub fn call_c() {
@@ -16,8 +17,14 @@ pub fn call_gpu() {
         hello_gpu();
     }
 }
+pub fn call_query_gpu()-> i32 {
+    unsafe {
+        query_gpu()
+    }
+}
 
 fn main() {
     call_c();
     call_gpu();
+    println!("Found device: {}", call_query_gpu());
 }
