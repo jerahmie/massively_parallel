@@ -107,6 +107,7 @@ extern "C" {
         printf(" Pageable Memory access Uses Host Page Tables: %d\n", pdevprop->pageableMemoryAccessUsesHostPageTables);
         printf(" Direct Managed Memory Access From Host: %d\n", pdevprop->directManagedMemAccessFromHost);
         printf(" Access Policy Max Windows Size: %d\n", pdevprop->accessPolicyMaxWindowSize);
+
         return 0;
     }
 

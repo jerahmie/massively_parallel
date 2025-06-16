@@ -3,6 +3,14 @@ name = "gpu_query"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "gpu_query"
+path = "src/main.rs"
+
 [dependencies]
 
 [build-dependencies]
