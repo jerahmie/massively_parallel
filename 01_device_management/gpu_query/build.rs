@@ -13,7 +13,10 @@ fn main() {
         .cuda(true)
         .flag("-gencode")
         .flag("arch=compute_61,code=sm_61")
+        .flag("-gencode")
+        .flag("arch=compute_80,code=sm_80")
         .flag("-allow-unsupported-compiler")
+        .flag("-std=c++17")
         .file("src/hello_gpu.cu")
         .compile("libhello_gpu.a");
 
