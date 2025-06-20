@@ -10,11 +10,11 @@ extern "C" {
     void hello_gpu(void) {
         hello_gpu_device();
     }
-
+    
     int print_device_properties(cudaDeviceProp *pdevprop) {
         printf("CUDA Device Properties: \n\n");
         printf(" name: %s\n", pdevprop->name);
-        printf(" uuid: %02X\n", pdevprop->uuid);
+	printf(" uuid: %x\n", pdevprop->uuid);
         printf(" Total global memory : %lu \n", pdevprop->totalGlobalMem);
         printf(" Shared memory per block: %lu\n", pdevprop->sharedMemPerBlock);
         printf(" Registers per block: %d\n", pdevprop->regsPerBlock);
